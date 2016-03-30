@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+    <name>Solwin_AdvanceOrderSuccess</name>
+    <version>1.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This plugin will provide all your order information about your order on order success page.</summary>
+    <description>This will provide all the order informations and details like:&#xD;
+1) Billing Information&#xD;
+2) Shipping Information&#xD;
+3) Shipping and Payment Methods&#xD;
+4) Product Details&#xD;
+5) Total, Descount and Subtotals</description>
+    <notes>This will make your boring order success page attractive. And also provide all the informations related customers&amp;amp;apos; order. No need to go to My orders page to view the order informaion.</notes>
+    <authors><author><name>Sanjay Dabhoya</name><user>solwin</user><email>stdabhoya@yahoo.com</email></author></authors>
+    <date>2015-12-02</date>
+    <time>08:18:58</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Solwin_AdvanceOrderSuccess.xml" hash="5fb085ec7c3e11e154ca4b08e9f71fb6"/></dir></target><target name="magecommunity"><dir name="Solwin"><dir name="AdvanceOrderSuccess"><dir name="Block"><file name="Index.php" hash="c6543827e5288619e0602462afdfa3e2"/></dir><dir name="Helper"><file name="Data.php" hash="453384d77df8d66f291cc74f9aefba71"/></dir><dir name="controllers"><file name="IndexController.php" hash="1e33bf39de3e0ec56ddb0c3460f74ba2"/></dir><dir name="etc"><file name="adminhtml.xml" hash="5a03a86c58888ee7c941841734245beb"/><file name="config.xml" hash="508706e52e9dd7c73213c180d27ef519"/><file name="system.xml" hash="dec3b35ebd1b3ebcae73a65f94ae7972"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="advanceordersuccess.xml" hash="99ddfaa28b4523d5152b9c82a7e64e29"/></dir><dir name="template"><dir name="advanceordersuccess"><file name="index.phtml" hash="4f301ce7a383fb00f4a42d699ef394d1"/></dir></dir></dir></dir><dir name="rwd"><dir name="default"><dir name="layout"><file name="advanceordersuccess.xml" hash="99ddfaa28b4523d5152b9c82a7e64e29"/></dir><dir name="template"><dir name="advanceordersuccess"><file name="index.phtml" hash="4f301ce7a383fb00f4a42d699ef394d1"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="solwinadvanceorder.css" hash="a309b45c5c3e7850ca316dda47e9abb2"/></dir></dir></dir><dir name="rwd"><dir name="default"><dir name="css"><file name="solwinadvanceorder.css" hash="a309b45c5c3e7850ca316dda47e9abb2"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
