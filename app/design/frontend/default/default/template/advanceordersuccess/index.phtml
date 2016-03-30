@@ -1,6 +1,6 @@
 <?php
-$order_id = $this->getOrderId(); //use your own order id 
-$order = Mage::getModel("sales/order")->loadByIncrementId($order_id); //load order by order id 
+$order_id = $this->getOrderId(); //use your own order id
+$order = Mage::getModel("sales/order")->loadByIncrementId($order_id); //load order by order id
 
 $items = $order->getItemsCollection();
 
@@ -43,45 +43,45 @@ if ($aboveenable == 1 && $aboveenableid != "") {
 <h2 class="sub-title"><?php echo $this->__('Thank you for your purchase!') ?></h2>
 <div class="myorder-wrapper">
     <div class="myorder">
-        <h3>Order Information</h3>
+        <h3><?php echo $this->__('Order Information')?></h3>
         <?php if ($this->getCanViewOrder() && $this->getCanPrintOrder()) : ?>
             <?php echo $this->__('<a class="print-icon" href="%s" onclick="this.target=\'_blank\'">here to print</a>', $this->getPrintUrl()) ?>
             <?php // echo $this->getChildHtml() ?>
         <?php endif; ?>
         <div class="inner_content">
-            <label> Date<span>:</span></label>
+            <label><?php echo $this->__('Date')?><span>:</span></label>
             <span> <?php echo $order->getCreatedAtStoreDate(); ?></span>
         </div>
         <div class="inner_content">
-            <label>Order ID<span>:</span></label> 
+            <label><?php echo $this->__('Order ID')?><span>:</span></label>
             <span><?php echo $order_id; ?></span>
         </div>
         <div class="inner_content">
-            <label>Order Status<span>:</span></label>
+            <label><?php echo $this->__('Order Status')?><span>:</span></label>
             <span> <?php echo $order->getStatusLabel(); ?></span>
         </div>
     </div>
     <div class="payment_method">
-        <h3>Payment & Shipping Information</h3>
+        <h3><?php echo $this->__('Payment & Shipping Information')?></h3>
         <div class="inner_content">
-            <label><b>Shipping Method</b><span>:</span></label>
-            <span> <?php echo $shipping_method; ?></span> 
+            <label><b><?php echo $this->__('Shipping Method')?></b><span>:</span></label>
+            <span> <?php echo $shipping_method; ?></span>
         </div>
         <div class="inner_content">
-            <label><b>Payment Method</b><span>:</span> </label>
+            <label><b><?php echo $this->__('Payment Method')?></b><span>:</span> </label>
             <span><?php echo $paymentmethod; ?></span>
         </div>
         <?php if ($paymentmethod == 'Credit Card (saved)') { ?>
             <div class="inner_content">
-                <label>Credit Card Type<span>:</span></label>
+                <label><?php echo $this->__('Credit Card Type')?><span>:</span></label>
                 <span><?php echo $options; ?></span>
             </div>
             <div class="inner_content">
-                <label>Credit Card Number<span>:</span></label>
+                <label><?php echo $this->__('Credit Card Number')?><span>:</span></label>
                 <span><?php echo $payarry['cc_last4']; ?></span>
             </div>
             <div class="inner_content">
-                <label>Credit Card Owner<span>:</span></label>
+                <label><?php echo $this->__('Credit Card Owner')?><span>:</span></label>
                 <span><?php echo $payarry['cc_owner']; ?></span>
             </div>
         <?php } ?>
@@ -89,64 +89,64 @@ if ($aboveenable == 1 && $aboveenableid != "") {
 </div>
 <div class="myorder-wrapper">
     <div class="order_summery">
-        <h3>Shipping Address</h3>
+        <h3><?php echo $this->__('Shipping Address')?></h3>
         <div class="inner_content">
-            <label>Name<span>:</span></label>
+            <label><?php echo $this->__('Name')?><span>:</span></label>
             <span><?php echo $shipping_address_data['firstname'] . " " . $shipping_address_data['lastname']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Delivery Address<span>:</span></label>
-            <span> <?php echo $shipping_address_data['street']; ?></span> 
+            <label><?php echo $this->__('Delivery Address')?><span>:</span></label>
+            <span> <?php echo $shipping_address_data['street']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Delivery City<span>:</span> </label>
-            <span> <?php echo $shipping_address_data['city']; ?></span> 
+            <label><?php echo $this->__('Delivery City')?><span>:</span> </label>
+            <span> <?php echo $shipping_address_data['city']; ?></span>
         </div>
         <div class="inner_content">
-            <label>State<span>:</span></label>
-            <span>  <?php echo $shipping_address_data['region']; ?></span> 
+            <label><?php echo $this->__('State')?><span>:</span></label>
+            <span>  <?php echo $shipping_address_data['region']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Country<span>:</span></label>
-            <span>  <?php echo Mage::app()->getLocale()->getCountryTranslation($shippcode); ?></span> 
+            <label><?php echo $this->__('Country')?><span>:</span></label>
+            <span>  <?php echo Mage::app()->getLocale()->getCountryTranslation($shippcode); ?></span>
         </div>
         <div class="inner_content">
-            <label>Postcode<span>:</span></label> 
-            <span> <?php echo $shipping_address_data['postcode']; ?></span> 
+            <label><?php echo $this->__('Postcode')?><span>:</span></label>
+            <span> <?php echo $shipping_address_data['postcode']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Telephone<span>:</span></label>
-            <span> <?php echo $shipping_address_data['telephone']; ?></span> 
+            <label><?php echo $this->__('Telephone')?><span>:</span></label>
+            <span> <?php echo $shipping_address_data['telephone']; ?></span>
         </div>
     </div>
     <div class="order_summery">
-        <h3>Billing Address</h3>
+        <h3><?php echo $this->__('Billing Address')?></h3>
         <div class="inner_content">
-            <label>Name<span>:</span></label> 
+            <label><?php echo $this->__('Name')?><span>:</span></label>
             <span><?php echo $billingAddress['firstname'] . " " . $billingAddress['lastname']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Delivery Address<span>:</span></label>
+            <label><?php echo $this->__('Delivery Address')?><span>:</span></label>
             <span><?php echo $billingAddress['street']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Delivery City<span>:</span></label>
+            <label><?php echo $this->__('Delivery City') ?><span>:</span></label>
             <span><?php echo $billingAddress['city']; ?></span>
         </div>
         <div class="inner_content">
-            <label>State<span>:</span></label>
+            <label><?php echo $this->__('State')?><span>:</span></label>
             <span><?php echo $billingAddress['region']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Country<span>:</span></label>
+            <label><?php echo $this->__('Country')?><span>:</span></label>
             <span><?php echo Mage::app()->getLocale()->getCountryTranslation($billcode); ?></span>
         </div>
         <div class="inner_content">
-            <label>Postcode<span>:</span></label>
+            <label><?php echo $this->__('Postcode')?><span>:</span></label>
             <span><?php echo $billingAddress['postcode']; ?></span>
         </div>
         <div class="inner_content">
-            <label>Telephone<span>:</span> </label>
+            <label><?php echo $this->__('Telephone')?><span>:</span> </label>
             <span><?php echo $billingAddress->getTelephone(); ?></span>
         </div>
     </div>
@@ -169,7 +169,7 @@ if ($aboveenable == 1 && $aboveenableid != "") {
                 $_product = Mage::getModel('catalog/product')->load($i->getProductId());
                 $productType = $_product->getTypeId();
                 $entityId = $_product->getEntityId();
-                
+
                 $options = $i->getProductOptions();
 
                 if ($productType == "bundle") {
@@ -182,7 +182,7 @@ if ($aboveenable == 1 && $aboveenableid != "") {
                     );
 
                     $bundled_items = array();
-                    
+
                     foreach ($selectionCollection as $option) {
                         $bundled_items[] = $option->product_id;
                     }
@@ -216,7 +216,7 @@ if ($aboveenable == 1 && $aboveenableid != "") {
                     </tr>
                     <?php
                 } else if (in_array($entityId, $bundled_items)) {
-                  
+
                 } else {
                     ?>
                     <tr>
@@ -233,7 +233,7 @@ if ($aboveenable == 1 && $aboveenableid != "") {
                                         <?php
                                         echo '<b>' . $option['label'] . '</b> :';
                                         echo $optionValue = $option['value'];
-                                        ?></span>                                
+                                        ?></span>
                                     <?php
                                 }
                             }
@@ -260,7 +260,7 @@ if ($aboveenable == 1 && $aboveenableid != "") {
             </tr>
             <tr class="shipping">
                 <td class="a-right" colspan="4">
-                    <?php echo $this->__('Shipping & Handling(' . $order->getShippingDescription() . ')'); ?>
+                    <?php echo $this->__('Entrega (' . $order->getShippingDescription() . ')'); ?>
                 </td>
                 <td colspan="2" class="last a-right">
                     <span class="subtotlal-value">
